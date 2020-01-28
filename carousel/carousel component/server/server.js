@@ -1,4 +1,28 @@
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const port = 3005;
+const app = express();
+const db = require('../db/querys.js');
 
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
+
+app.get('/wowStuff', (req, res) => {
+  db.getAllData((err, data) => {
+    if(err){
+      console.log('problem getting all tasks in the server')
+      res.send(err)
+    } else {
+      res.send(data)
+    }
+  })
+})
+
+app.listen(port, () => {
+  console.log(`yo, dude, listen-  you're connected to ${port}`);
+})
 
 
 
