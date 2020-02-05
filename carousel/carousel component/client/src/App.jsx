@@ -1,13 +1,30 @@
 import React from 'react';
 import axios from 'axios';
 import Item from './components/Item.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      data : []
+      data : [],
+      classIncrement : 0,
+      selection: []
+    }
+
+    this.handleLeft = this.handleLeft.bind(this)
+    this.handleRight = this.handleRight.bind(this)
+  }
+
+  handleLeft(){
+    if(this.state.classIncrement > 0){
+      this.setState({classIncrement : this.state.classIncrement-=1})
+    }
+  }
+  handleRight(){
+    if((this.state.classIncrement) < (this.state.data.length / 2)){
+      this.setState({classIncrement : this.state.classIncrement+=1})
     }
   }
 
@@ -16,10 +33,15 @@ export default class App extends React.Component {
   }
 
   fetchAllData(){
-    axios.get('http://localhost:3005/wowStuff').then((response) => {
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       console.log('this is the response from getting all the stuff --> ', response.data)
+      let tenList = [];
+      for(let i = 0; i < 10; i ++){
+        tenList.push(response.data[i])
+      }
       this.setState({
-        data : response.data
+        data : response.data,
+        selection: tenList
       })
     })
     .catch((err) => {
@@ -28,23 +50,26 @@ export default class App extends React.Component {
   }
 
   render(){
+    
     return (
-      <div className='container'>
+      <div>
+        <h2 className="talign-center">Related Items</h2>
+     
+        <div className= 'tcontainer'>
 
-        <span className="leftButton" role="button" onClick={() => {console.log('clicked left!')}}>
-          <button className="leftButtonTarget">this is a button</button>
-        </span>
+          <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
 
-        <span className="rightButton" role="button" onClick={() => {console.log('clicked right!')}}>
-          <button className="rightButtonTarget"></button>
-        </span>
+          <button className={"trightButton" + (this.state.classIncrement + 2 === this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
 
-        <div className="niceRow">
+          <div className={'tniceRow' + ` transformLeft${this.state.classIncrement}`}>
 
-          {this.state.data.map((item) => 
-          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
-          )}
+            
 
+            {this.state.selection.map((item, i) => 
+            <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
+            )}
+
+          </div>
         </div>
       </div>
     )

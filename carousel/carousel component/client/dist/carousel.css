@@ -1,0 +1,282 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 5px;
+  padding: 0;
+  color: #333;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: "DIN Next",Helvetica,Arial,sans-serif;
+  color: #333;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  display: block;
+  font-size: 2rem;
+}
+
+.tcontainer {
+  background-color: rgb(255, 255, 255);
+  width: 1200px;
+  height: 400px;
+  /* border: 1px solid rgba(126, 121, 121, 0.342); */
+  padding: 0;
+  /* margin: 20px; */
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  /* left: 10%;
+  top: 220px; */
+  left: 10%;
+}
+
+@keyframes deviate {
+  from {left:10%; top:220px;}
+  to {left: 50%; top:220px;}
+}
+
+.transformLeft1{ 
+  transform: translate(-500px);
+}
+.transformLeft2{ 
+  transform: translate(-1000px);
+}
+.transformLeft3{ 
+  transform: translate(-1500px);
+}
+.transformLeft4{ 
+  transform: translate(-2000px);
+}
+.transformLeft5{ 
+  transform: translate(-2500px);
+}
+.transformLeft6{ 
+  transform: translate(-3000px);
+}
+.transformLeft7{ 
+  transform: translate(-3500px);
+}
+.transformLeft8{ 
+  transform: translate(-4000px);
+}
+.transformLeft9{ 
+  transform: translate(-4500px);
+}
+.transformLeft10{ 
+  transform: translate(-5000px);
+}
+.transformLeft11{ 
+  transform: translate(-5500px);
+}
+.transformLeft12{ 
+  transform: translate(-6000px);
+}
+.transformLeft13{ 
+  transform: translate(-6500px);
+}
+.transformLeft14{ 
+  transform: translate(-7000px);
+}
+.transformLeft15{ 
+  transform: translate(-7500px);
+}
+.transformLeft16{ 
+  transform: translate(-8000px);
+}
+.transformLeft17{ 
+  transform: translate(-8500px);
+}
+.transformLeft18{ 
+  transform: translate(-9000px);
+}
+.transformLeft19{ 
+  transform: translate(-9500px);
+}
+.transformLeft20{ 
+  transform: translate(-10000px);
+}
+.transformLeft21{ 
+  transform: translate(-10500px);
+}
+.transformLeft22{ 
+  transform: translate(-11000px);
+}
+.transformLeft23{ 
+  transform: translate(-11500px);
+}
+.transformLeft24{ 
+  transform: translate(-12000px);
+}
+.transformLeft25{ 
+  transform: translate(-12500px);
+}
+.transformLeft26{ 
+  transform: translate(-13000px);
+}
+.transformLeft27{ 
+  transform: translate(-13500px);
+}
+.transformLeft28{ 
+  transform: translate(-14000px);
+}
+.transformLeft29{ 
+  transform: translate(-14500px);
+}
+.transformLeft30{ 
+  transform: translate(-15000px);
+}
+.transformLeft31{ 
+  transform: translate(-15500px);
+}
+.transformLeft32{ 
+  transform: translate(-16000px);
+}
+.transformLeft33{ 
+  transform: translate(-16500px);
+}
+.transformLeft34{ 
+  transform: translate(-17000px);
+}
+.transformLeft35{ 
+  transform: translate(-17500px);
+}
+.transformLeft36{ 
+  transform: translate(-18000px);
+}
+.transformLeft37{ 
+  transform: translate(-18500px);
+}
+.transformLeft38{ 
+  transform: translate(-19000px);
+}
+.transformLeft39{ 
+  transform: translate(-19500px);
+}
+.transformLeft40{ 
+  transform: translate(-20000px);
+}
+.transformLeft41{ 
+  transform: translate(-20500px);
+}
+.transformLeft42{ 
+  transform: translate(-21000px);
+}
+.transformLeft43{ 
+  transform: translate(-21500px);
+}
+.transformLeft44{ 
+  transform: translate(-22000px);
+}
+.transformLeft45{ 
+  transform: translate(-22500px);
+}
+
+
+img, #t {
+  height: 225px;
+  width: 225px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.tniceRow {
+  display: flex; 
+  flex-direction: row;
+  transition: ease-in-out .5s;  
+  /* transition: ease-in 1s <------- this makes animation smooth */
+}
+
+.tsingleItem {
+  max-height: 399px;
+  max-width: 225px;
+  padding: 7.5px;
+  margin: 0 5px;
+  margin-bottom: 15px;
+}
+
+
+.tleftButton {
+  position:absolute;
+  top:22%;
+  /* left:10.7px; */
+  left: 0;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  opacity:.8;
+  cursor:pointer;
+  text-align:center;
+  transform-origin: 55% 50%;
+  transition:transform .1s ease-out 0s;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  color:white;
+  opacity: 0.5;
+}
+.tleftButton:hover {
+  opacity: 0.9;
+}
+
+
+.trightButton {
+  position:absolute;
+  top:22%;
+  right: 0%;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  opacity:.8;
+  cursor:pointer;
+  text-align:center;
+  transform-origin: 55% 50%;
+  transition:transform .1s ease-out 0s;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  color:white;
+  opacity: 0.5;
+}
+.trightButton:hover {
+  opacity: 0.9;
+}
+
+.talign-center {
+  text-align: center!important;
+}
+
+#titemName {
+  height: 20px;
+  width: 225px;
+  display: block;
+  font-family: Helvetica,Arial,sans-serif;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+#trating {
+  margin-bottom: 30px;
+  width: 225px;
+  display: block;
+  font-family: Helvetica,Arial,sans-serif;
+  height: 2px
+}
+
+#tsmallSave {
+  color: #338700;
+  font-size:.8571428571428571rem;
+}
+.thide {
+  visibility: hidden;
+}
+
+#icon {
+  /* content: url('https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg');
+  transform: scale(.3); */
+}
