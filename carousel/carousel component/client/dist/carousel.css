@@ -1,40 +1,37 @@
-h1, h2, h3, h4, h5, h6 {
+
+.th1, .th2, .th3, .th4, .th5, .th6 {
   margin: 0 0 5px;
   padding: 0;
   color: #333;
   font-weight: 400;
 }
 
-h2 {
+.th2 {
   font-family: "DIN Next",Helvetica,Arial,sans-serif;
   color: #333;
   margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+  /* margin-block-end: 0.83em; */
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   display: block;
-  font-size: 2rem;
+  font-size: 28px;
+  margin-bottom: 18px;
 }
 
 .tcontainer {
   background-color: rgb(255, 255, 255);
-  width: 1200px;
-  height: 400px;
-  /* border: 1px solid rgba(126, 121, 121, 0.342); */
+  width: 100%;
+  /* height: 442px; */
+  height: 100%;
   padding: 0;
-  /* margin: 20px; */
   text-align: center;
+  text-align: center!important;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  /* left: 10%;
-  top: 220px; */
-  left: 10%;
-}
-
-@keyframes deviate {
-  from {left:10%; top:220px;}
-  to {left: 50%; top:220px;}
+  max-width: 1032px;
+  margin-bottom: 50px;
+  z-index: 1;
 }
 
 .transformLeft1{ 
@@ -174,14 +171,20 @@ h2 {
 }
 
 
-img, #t {
+#t {
   height: 225px;
   width: 225px;
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
-.tniceRow {
+.tniceRowRelated {
+  display: flex; 
+  flex-direction: row;
+  transition: ease-in-out .5s;  
+  /* transition: ease-in 1s <------- this makes animation smooth */
+}
+.tniceRowViewed {
   display: flex; 
   flex-direction: row;
   transition: ease-in-out .5s;  
@@ -190,60 +193,79 @@ img, #t {
 
 .tsingleItem {
   max-height: 399px;
-  max-width: 225px;
+  /* max-width: 225px; */
   padding: 7.5px;
   margin: 0 5px;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
-
+.tsingleItem:hover {
+  cursor:pointer;
+  transform: scale(1.02);
+  transition: ease-in .1s;  
+}
 
 .tleftButton {
   position:absolute;
-  top:22%;
+  top:35%;
   /* left:10.7px; */
   left: 0;
   width:3.5%;
   height:70px;
   z-index:40;
   background: #0471AF;
-  opacity:.8;
   cursor:pointer;
   text-align:center;
-  transform-origin: 55% 50%;
-  transition:transform .1s ease-out 0s;
-  transition-property: transform;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   color:white;
   opacity: 0.5;
 }
-.tleftButton:hover {
-  opacity: 0.9;
-}
-
 
 .trightButton {
   position:absolute;
-  top:22%;
+  top:35%;
   right: 0%;
   width:3.5%;
   height:70px;
   z-index:40;
   background: #0471AF;
-  opacity:.8;
   cursor:pointer;
   text-align:center;
-  transform-origin: 55% 50%;
-  transition:transform .1s ease-out 0s;
-  transition-property: transform;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   color:white;
   opacity: 0.5;
 }
-.trightButton:hover {
+
+.trightButton:hover, .tleftButton:hover {
+  opacity: 0.9;
+}
+.tleftButtonViewed {
+  position:absolute;
+  top:35%;
+  /* left:10.7px; */
+  left: 0;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed {
+  position:absolute;
+  top: 35%;
+  right: 0%;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed:hover, .tleftButton:hover {
   opacity: 0.9;
 }
 
@@ -252,12 +274,16 @@ img, #t {
 }
 
 #titemName {
-  height: 20px;
+  height: 60px;
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
   margin-bottom: 15px;
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  line-height: 1.42857143;
+}
+#titemName:hover {
+  color: #03517d;
 }
 
 #trating {
@@ -265,18 +291,17 @@ img, #t {
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
-  height: 2px
+  height: 17px;
 }
 
 #tsmallSave {
   color: #338700;
   font-size:.8571428571428571rem;
+  height: 16px;
+  margin-bottom: 15px;
 }
 .thide {
   visibility: hidden;
 }
 
-#icon {
-  /* content: url('https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg');
-  transform: scale(.3); */
-}
+
